@@ -4,14 +4,23 @@
 		{
 			"type": "npm",
 			"script": "build",
-			"label": "Build",
-			"detail": "Build project files"
+			"label": "Build"
+		},
+		{
+			"type": "npm",
+			"script": "test",
+			"label": "Run Test"
 		},
 		{
 			"type": "npm",
 			"script": "start",
-			"label": "Development Server",
-			"detail": "Start development server"
+			"label": "Development Server"
+		},
+		{
+			"type": "npm",
+			"script": "cy:open",
+			"label": "Open Cypress",
+			"detail": "Make sure development server is running"
 		}
 	]
 }
