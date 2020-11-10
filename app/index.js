@@ -21,13 +21,23 @@ let form = document.getElementById('feedback')
 form.addEventListener('submit', function(event) {
     event.preventDefault()
 
+    // Get selectors
+    let nameElem = form.querySelector('input[name="name"]')
+    let thoughtsElem = form.querySelector('textarea[name="thoughts"]')
+    let likeElem = form.querySelector('input[name="like"]')
+
     // Get data
-    let name = form.querySelector('input[name="name"]').value
-    let thoughts = form.querySelector('textarea[name="thoughts"]').value
-    let like = form.querySelector('input[name="like"]').checked
+    let name = nameElem.value
+    let thoughts = thoughtsElem.value
+    let like = likeElem.checked
 
     // Put data in element
     let entry = document.createElement('tr')
     entry.innerHTML = `<td>${name}</td><td>${thoughts}</td><td>${like}</td>`
     document.getElementById('submissions-entry').appendChild(entry)
+
+    // Clear data
+    nameElem.value = ''
+    thoughtsElem.value = ''
+    likeElem.checked = false
 })
