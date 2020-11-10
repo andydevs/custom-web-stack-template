@@ -13,6 +13,7 @@ const buildDir = 'public'
 // Webpack config module
 module.exports = {
     mode: process.env.NODE_ENV || 'development',
+    devtool: 'source-map',
     entry: './app/index.js',
     output: {
         path: path.resolve(__dirname, buildDir),
