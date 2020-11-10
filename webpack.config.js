@@ -7,13 +7,21 @@
 const webpack = require('webpack')
 const path = require('path')
 
+// Build directory
+const buildDir = 'public'
+
 // Webpack config module
 module.exports = {
     mode: process.env.NODE_ENV || 'development',
     entry: './app/index.js',
     output: {
-        path: path.resolve(__dirname, 'public'),
+        path: path.resolve(__dirname, buildDir),
         filename: 'bundle.js'
+    },
+    devServer: {
+        contentBase: path.join(__dirname, buildDir),
+        compress: true,
+        port: 3000
     },
     module: {
         rules: [
