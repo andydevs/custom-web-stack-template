@@ -1,0 +1,17 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "build",
+			"label": "Build",
+			"detail": "Build project files"
+		},
+		{
+			"type": "npm",
+			"script": "start",
+			"label": "Development Server",
+			"detail": "Start development server"
+		}
+	]
+}
