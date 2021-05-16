@@ -14,11 +14,17 @@ jobs:
       - name: Clean Install Packages
         run: npm ci
 
-      # Build and test
+      # Build
       - name: Build Site
         run: npm run build
-      - name: Run Tests
-        run: npm test
+      
+      # Run Tests
+      - name: Run Cypress Tests
+        uses: cypress-io/github-action@v2.9.7
+        with:
+          start: npm start
+          wait-on: http://localhost:3000
+          
 
       # Deploy
       - name: Deploy to GitHub Pages
