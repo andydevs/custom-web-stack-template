@@ -15,7 +15,7 @@ jobs:
         run: npm ci
       - name: Build Site
         run: npm run build
-      - name: Upload
+      - name: Upload Artifact
         uses: actions/upload-artifact@v2.2.3
         with:
           path: public
@@ -39,6 +39,8 @@ jobs:
     needs: [build, test]
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
       - name: Download Artifact
         uses: actions/download-artifact@v2.0.9
         with:
