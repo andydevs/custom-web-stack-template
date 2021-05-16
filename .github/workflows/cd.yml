@@ -15,6 +15,10 @@ jobs:
         run: npm ci
       - name: Build Site
         run: npm run build
+      - name: Upload
+        uses: actions/upload-artifact@v2.2.3
+        with:
+          path: public
   
   # Test
   test:
@@ -35,6 +39,10 @@ jobs:
     needs: [build, test]
     runs-on: ubuntu-latest
     steps:
+      - name: Download Artifact
+        uses: actions/download-artifact@v2.0.9
+        with:
+          path: public
       - name: Deploy to GitHub Pages
         uses: rdarida/simple-github-pages-deploy-action@v1
         with:
