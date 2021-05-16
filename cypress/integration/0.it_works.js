@@ -4,7 +4,8 @@
  * Author:  Anshul Kharbanda
  * Created: [Creation Date]
  */
-import './style/main.scss'
 
-// Bundle script
-console.log('yoyoyoyoyo')
+specify('Fill out some form items', () => {
+    // Visit site
+    cy.visit('/')
+})
