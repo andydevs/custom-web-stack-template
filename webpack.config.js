@@ -4,10 +4,11 @@
  * Author:  Anshul Kharbanda
  * Created: [Creation Date]
  */
-const webpack = require('webpack')
 const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
-// Build directory
+// Build config
+const siteTitle = 'Site Title'
 const buildDir = 'public'
 
 // Webpack config module
@@ -52,5 +53,12 @@ module.exports = {
                 use: 'file-loader'
             }
         ]
-    }
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            title: siteTitle,
+            template: './app/index.ejs',
+            inject: 'body'
+        })
+    ]
 }
